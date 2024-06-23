@@ -25,11 +25,15 @@ import (
 
 // StatsSpec defines the desired state of Stats
 type StatsSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Stats. Edit stats_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	RunningPods      int      `json:"runningPods"`
+	Deployments      int      `json:"deployments"`
+	DaemonSets       int      `json:"daemonSets"`
+	StatefulSets     int      `json:"statefulSets"`
+	ReplicaSets      int      `json:"replicaSets"`
+	DeploymentNames  []string `json:"deploymentNames"`
+	DaemonSetNames   []string `json:"daemonSetNames"`
+	StatefulSetNames []string `json:"statefulSetNames"`
+	ReplicaSetNames  []string `json:"replicaSetNames"`
 }
 
 // StatsStatus defines the observed state of Stats
