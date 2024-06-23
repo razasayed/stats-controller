@@ -1,11 +1,32 @@
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  labels:
-    app.kubernetes.io/name: stats-controller
-    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - monitoring.io
+  resources:
+  - stats
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - monitoring.io
+  resources:
+  - stats/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - monitoring.io
+  resources:
+  - stats/status
+  verbs:
+  - get
+  - patch
+  - update
