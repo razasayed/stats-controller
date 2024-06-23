@@ -6,4 +6,17 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: stats-sample
 spec:
-  # TODO(user): Add fields here
+    runningPods: 1
+    deployments: 1
+    daemonSets: 1
+    statefulSets: 1
+    replicaSets: 1
+    deploymentNames:
+    - nginx-ingress-controller
+    daemonSetNames:
+    - stats-daemonset
+    statefulSetNames:
+      - mysql
+    replicaSetNames:
+    - nginx-ingress-controller-7d9d88f7d
+
