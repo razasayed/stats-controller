@@ -4,7 +4,8 @@ metadata:
   labels:
     app.kubernetes.io/name: stats-controller
     app.kubernetes.io/managed-by: kustomize
-  name: stats-sample
+  name: stats-example
+spec: {}
 status:
     runningPods: 1
     deployments: 1
