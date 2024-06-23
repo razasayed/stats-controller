@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v4
 projectName: stats-controller
 repo: github.com/razasayed/stats-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: io
+  group: monitoring
+  kind: Stats
+  path: github.com/razasayed/stats-controller/api/v1
+  version: v1
 version: "3"
