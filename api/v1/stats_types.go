@@ -24,7 +24,10 @@ import (
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // StatsSpec defines the desired state of Stats
-type StatsSpec struct {
+type StatsSpec struct{}
+
+// StatsStatus defines the observed state of Stats
+type StatsStatus struct {
 	RunningPods      int      `json:"runningPods"`
 	Deployments      int      `json:"deployments"`
 	DaemonSets       int      `json:"daemonSets"`
@@ -34,12 +37,6 @@ type StatsSpec struct {
 	DaemonSetNames   []string `json:"daemonSetNames"`
 	StatefulSetNames []string `json:"statefulSetNames"`
 	ReplicaSetNames  []string `json:"replicaSetNames"`
-}
-
-// StatsStatus defines the observed state of Stats
-type StatsStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 }
 
 // +kubebuilder:object:root=true
